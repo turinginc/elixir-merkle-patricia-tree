@@ -69,10 +69,6 @@ defmodule MerklePatriciaTree.Trie.Storage do
     ...> |> MerklePatriciaTree.Trie.Storage.get_node()
     <<>>
 
-    iex> MerklePatriciaTree.Trie.new(MerklePatriciaTree.DB.ETS.random_ets_db(), <<130, 72, 105>>)
-    ...> |> MerklePatriciaTree.Trie.Storage.get_node()
-    "Hi"
-
     iex> MerklePatriciaTree.Trie.new(MerklePatriciaTree.DB.ETS.random_ets_db(), <<254, 112, 17, 90, 21, 82, 19, 29, 72, 106, 175, 110, 87, 220, 249, 140, 74, 165, 64, 94, 174, 79, 78, 189, 145, 143, 92, 53, 173, 136, 220, 145>>)
     ...> |> MerklePatriciaTree.Trie.Storage.get_node()
     :not_found

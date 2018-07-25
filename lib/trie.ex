@@ -39,22 +39,16 @@ defmodule MerklePatriciaTree.Trie do
   ## Examples
 
     iex> MerklePatriciaTree.Trie.new(MerklePatriciaTree.DB.ETS.random_ets_db(:trie_test_1))
-    %MerklePatriciaTree.Trie{db: {MerklePatriciaTree.DB.ETS, :trie_test_1}, root_hash: <<69, 176, 207, 194, 32, 206, 236, 91, 124, 28, 98, 196,
-               212, 25, 61, 56, 228, 235, 164, 142, 136, 21, 114, 156, 231, 95,
-               156, 10, 176, 228, 193, 192>>}
+    %MerklePatriciaTree.Trie{db: {MerklePatriciaTree.DB.ETS, :trie_test_1}, root_hash: ""}
 
     iex> MerklePatriciaTree.Trie.new(MerklePatriciaTree.DB.ETS.random_ets_db(:trie_test_2), <<1, 2, 3>>)
-    %MerklePatriciaTree.Trie{db: {MerklePatriciaTree.DB.ETS, :trie_test_2}, root_hash: <<17, 192, 231, 155, 113, 195, 151, 108, 205, 12, 2,
-               209, 49, 14, 37, 22, 192, 142, 220, 157, 139, 111, 87, 204, 214,
-               128, 214, 58, 77, 142, 114, 218>>}
+    %MerklePatriciaTree.Trie{db: {MerklePatriciaTree.DB.ETS, :trie_test_2}, root_hash: <<1, 2, 3>>}
 
     iex> trie = MerklePatriciaTree.Trie.new(MerklePatriciaTree.DB.LevelDB.init("/tmp/#{
     MerklePatriciaTree.Utils.random_string(20)
   }"), <<1, 2, 3>>)
     iex> trie.root_hash
-    <<17, 192, 231, 155, 113, 195, 151, 108, 205, 12, 2, 209, 49, 14, 37,
-             22, 192, 142, 220, 157, 139, 111, 87, 204, 214, 128, 214, 58, 77,
-             142, 114, 218>>
+    <<1, 2, 3>>
     iex> {db, _db_ref} = trie.db
     iex> db
     MerklePatriciaTree.DB.LevelDB
