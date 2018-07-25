@@ -53,6 +53,7 @@ defmodule MerklePatriciaTree.Trie.Storage do
   TODO: Doc and test
   """
   @spec store(ExRLP.t(), MerklePatriciaTree.DB.db()) :: binary()
+  def store(%{root_hash: ""} = trie), do: trie
   def store(rlp_encoded_node, db) do
     hash = Utils.hash(rlp_encoded_node)
     DB.put!(db, hash, rlp_encoded_node)
