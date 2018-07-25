@@ -155,6 +155,7 @@ defmodule MerklePatriciaTree.Trie do
   end
 
   def store(%{root_hash: ""} = trie), do: trie
+  def store(%{root_hash: <<128>>} = trie), do: %{trie | root_hash: ""}
   def store(trie) do
     root_hash =
       if not is_binary(trie.root_hash) or trie.root_hash == <<>>,
