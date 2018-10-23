@@ -4,14 +4,9 @@ defmodule MerklePatriciaTree.Mixfile do
   def project do
     [
       app: :merkle_patricia_tree,
-      version: "0.2.6",
+      version: "0.1.0",
       elixir: "~> 1.6",
       description: "Ethereum's Merkle Patricia Trie data structure",
-      package: [
-        maintainers: ["Geoffrey Hayes", "Ayrat Badykov", "Mason Forest"],
-        licenses: ["MIT"],
-        links: %{"GitHub" => "https://github.com/exthereum/merkle_patricia_tree"}
-      ],
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -45,7 +40,7 @@ defmodule MerklePatriciaTree.Mixfile do
       {:poison, "~> 3.1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.16", only: :dev, runtime: false},
       {:hex_prefix, "~> 0.1.0"},
-      {:ex_rlp, "~> 0.2.1"},
+      {:ex_rlp, "~> 0.3.0"},
       {:keccakf1600, "~> 2.0.0", hex: :keccakf1600_orig},
       {:exleveldb, "~> 0.11.1"},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},

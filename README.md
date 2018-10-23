@@ -8,20 +8,6 @@ The modified patricia merkle trie allows arbitrary storage of key, value pairs w
 
 [This diagram](https://i.stack.imgur.com/YZGxe.png) is also very helpful in understanding these tries.
 
-## Installation
-
-The easiest way to add MerklePatriciaTree to your project is by [using Mix](http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html).
-
-Add `:merkle_patricia_tree` as a dependency to your project's `mix.exs`:
-
-```elixir
-defp deps do
-  [
-    {:merkle_patricia_tree, "~> 0.2.5"}
-  ]
-end
-```
-
 And run:
 
     $ mix deps.get
