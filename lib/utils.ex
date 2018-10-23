@@ -3,8 +3,6 @@ defmodule MerklePatriciaTree.Utils do
   Helper functions related to common operations
   """
 
-  alias MerklePatriciaTree.Utils
-
   @hash_bytes 32
 
   @doc """
