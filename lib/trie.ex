@@ -166,7 +166,7 @@ defmodule MerklePatriciaTree.Trie do
         do: ExRLP.encode(trie.root_hash),
         else: trie.root_hash
 
-    if byte_size(root_hash) < MerklePatriciaTree.Trie.Storage.max_rlp_len() do
+    if byte_size(root_hash) <= MerklePatriciaTree.Trie.Storage.max_rlp_len() do
       %{trie | root_hash: root_hash |> MerklePatriciaTree.Trie.Storage.store(trie.db)}
     else
       trie
